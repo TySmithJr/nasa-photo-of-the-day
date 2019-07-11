@@ -48,7 +48,7 @@ export default function App() {
         {state.service_version}
       </p>
       <div>
-        {state.media_type === "image" ? <img src={state.url} /> : <iframe src={state.url} > </iframe>}
+        {state.media_type === "image" ? <img src={state.url} alt="NASA" /> : <iframe src={state.url} > </iframe>}
       </div>
     </div>
   );
