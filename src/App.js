@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from "react";
 import "./App.css";
 import axios from "axios";
-
+import { Container } from "semantic-ui-react"
 export default function App() {
 
   const [state, setState] = useState({
@@ -32,26 +32,27 @@ export default function App() {
 
   return (
     <div className="App">
-      <h1>
-       {state.title}
-      </h1>
-      <p>
-      {state.date}
-      </p>
-      <p>
-        {state.explanation}
-      </p>
-      <p>
-        {state.media_type}
-      </p>
-      <p>
-        {state.service_version}
-      </p>
-      <div>
-        {state.media_type === "image" ? <img src={state.url} /> : <iframe src={state.url} > </iframe>}
+      <h1 className="title">{state.title}</h1>
+       
+      <p className="date">{state.date}</p>
+      
+      <Container textAlign='center'> {state.explanation}</Container>
+      
+      {/* <p className="media">{state.media_type}</p> */}
+      
+      {/* <p className="version">{state.service_version}</p> */}
+        
+      <div >{state.media_type === "image" ? <img className="image" src={state.url} alt="NASA" /> : <iframe src={state.url} > </iframe>}
+     
       </div>
+      
+        
+        
     </div>
   );
 
   }
+      
+        
+    
 
